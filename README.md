@@ -1,0 +1,1 @@
+role_onregistration_patched
