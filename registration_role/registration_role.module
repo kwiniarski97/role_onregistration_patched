@@ -24,7 +24,7 @@ function registration_role_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function registration_role_user_presave(EntityInterface $entity) {
-if($entity -> toArray()['changed']['0']['value'] == $entity -> toArray()['created']['0']['value']){
+if ($user->isNew()) {
   $config = \Drupal::config('registration_role.setting');
   foreach ($config->get('role_to_select') as $key => $value) {
     if ($value) {
